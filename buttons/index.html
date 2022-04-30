@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1280, initial-scale=1.0" />
+    <title>Buttons</title>
+  </head>
+  <body>
+    <a href="#" class="buttonBorder">Clique aqui!</a>
+  </body>
+  <style>
+    body {
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 98vh;
+    }
+    .buttonBorder {
+      text-decoration: none;
+      font-size: 25px;
+      color: #1fe8b6;
+      padding: 20px 50px;
+      border: 3px solid #1fe8b6;
+      position: relative;
+    }
+    .buttonBorder::before,
+    .buttonBorder::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: inherit;
+      transition: all 0.5s;
+    }
+    .buttonBorder::before {
+      top: -15px;
+      left: -15px;
+      border-width: 3px 0 0 3px;
+    }
+    .buttonBorder::after {
+      bottom: -15px;
+      right: -15px;
+      border-width: 0 3px 3px 0;
+    }
+    .buttonBorder:hover::before,
+    .buttonBorder:hover::after {
+      width: calc(100% + 27px);
+      height: calc(100% + 27px);
+    }
+  </style>
+</html>
